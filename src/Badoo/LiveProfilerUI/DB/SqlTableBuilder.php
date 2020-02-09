@@ -37,12 +37,12 @@ class SqlTableBuilder
                 $data_sql .= "`{$custom_field}` float DEFAULT NULL,\n";
                 $tree_sql .= "`{$custom_field}` float DEFAULT NULL,\n";
             } elseif (strpos($custom_field, $call_count_field) !== false) {
-                $data_sql .= "`{$custom_field}` int(11) unsigned DEFAULT NULL,\n";
-                $tree_sql .= "`{$custom_field}` int(11) unsigned DEFAULT NULL,\n";
+                $data_sql .= "`{$custom_field}` float DEFAULT NULL,\n";
+                $tree_sql .= "`{$custom_field}` float DEFAULT NULL,\n";
             } else {
-                $snapshot_sql .= "`{$custom_field}` int(11) unsigned DEFAULT NULL,\n";
-                $data_sql .= "`{$custom_field}` int(11) unsigned DEFAULT NULL,\n";
-                $tree_sql .= "`{$custom_field}` int(11) unsigned DEFAULT NULL,\n";
+                $snapshot_sql .= "`{$custom_field}` float DEFAULT NULL,\n";
+                $data_sql .= "`{$custom_field}` float DEFAULT NULL,\n";
+                $tree_sql .= "`{$custom_field}` float DEFAULT NULL,\n";
             }
         }
         $sql = str_replace(
@@ -63,12 +63,12 @@ class SqlTableBuilder
                 $data_sql[] = "{$custom_field} REAL DEFAULT NULL";
                 $tree_sql[] = "{$custom_field} REAL DEFAULT NULL";
             } elseif (strpos($custom_field, $call_count_field) !== false) {
-                $data_sql[] = "{$custom_field} INT DEFAULT NULL";
-                $tree_sql[] = "{$custom_field} INT DEFAULT NULL";
+                $data_sql[] = "{$custom_field} REAL DEFAULT NULL";
+                $tree_sql[] = "{$custom_field} REAL DEFAULT NULL";
             } else {
-                $snapshot_sql[] = "{$custom_field} INT DEFAULT NULL";
-                $data_sql[] = "{$custom_field} INT DEFAULT NULL";
-                $tree_sql[] = "{$custom_field} INT DEFAULT NULL";
+                $snapshot_sql[] = "{$custom_field} REAL DEFAULT NULL";
+                $data_sql[] = "{$custom_field} REAL DEFAULT NULL";
+                $tree_sql[] = "{$custom_field} REAL DEFAULT NULL";
             }
         }
         $snapshot_sql = implode(",\n", $snapshot_sql);
@@ -93,12 +93,12 @@ class SqlTableBuilder
                 $data_sql .= "{$custom_field} REAL DEFAULT NULL,\n";
                 $tree_sql .= "{$custom_field} REAL DEFAULT NULL,\n";
             } elseif (strpos($custom_field, $call_count_field) !== false) {
-                $data_sql .= "{$custom_field} INTEGER  DEFAULT NULL,\n";
-                $tree_sql .= "{$custom_field} INTEGER  DEFAULT NULL,\n";
+                $data_sql .= "{$custom_field} REAL  DEFAULT NULL,\n";
+                $tree_sql .= "{$custom_field} REAL  DEFAULT NULL,\n";
             } else {
-                $snapshot_sql .= "{$custom_field} INTEGER  DEFAULT NULL,\n";
-                $data_sql .= "{$custom_field} INTEGER  DEFAULT NULL,\n";
-                $tree_sql .= "{$custom_field} INTEGER  DEFAULT NULL,\n";
+                $snapshot_sql .= "{$custom_field} REAL  DEFAULT NULL,\n";
+                $data_sql .= "{$custom_field} REAL  DEFAULT NULL,\n";
+                $tree_sql .= "{$custom_field} REAL  DEFAULT NULL,\n";
             }
         }
         $sql = str_replace(
