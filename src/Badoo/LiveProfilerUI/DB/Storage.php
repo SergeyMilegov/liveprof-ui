@@ -31,7 +31,7 @@ class Storage implements StorageInterface
      */
     public function __construct(string $url)
     {
-        $url = get_env('DB_URL') ?? $url;
+        $url = getenv('DB_URL') ?? $url;
         $config = new \Doctrine\DBAL\Configuration();
         $connectionParams = ['url' => $url];
 
